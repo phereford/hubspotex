@@ -44,11 +44,11 @@ defmodule Hubspot.HTTP.Client do
 
   defp process_request_body(""), do: ""
   defp process_request_body(body) do
-    body |> Poison.encode!
+    body |> Jason.encode!
   end
 
   defp process_response_body(""), do: nil
   defp process_response_body(body) do
-    body |> Poison.decode!
+    body |> Jason.decode!
   end
 end
